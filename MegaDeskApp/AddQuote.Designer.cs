@@ -20,6 +20,12 @@
             base.Dispose(disposing);
         }
 
+        //private void InitializeComponent()
+        //{
+        //    InitializeComponent(WidthBox);
+        //    InitializeComponent(DepthBox);
+        //}
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,6 +34,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             MainMenuBtn = new Button();
             lblDate = new Label();
             lblCustomerName = new Label();
@@ -35,19 +42,32 @@
             lblDepth = new Label();
             lblDeskDrawer = new Label();
             lblMaterialType = new Label();
-            lblTimeframe = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
-            menuStrip1 = new MenuStrip();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            NameBox = new TextBox();
+            WidthBox = new TextBox();
+            DepthBox = new TextBox();
+            lblDrawerAmount = new Label();
+            lblMaterial = new Label();
+            lblShippingTimeframe = new Label();
+            button2 = new Button();
+            DrawerInput = new ComboBox();
+            MaterialComboBox = new ComboBox();
+            ShippingComboBox = new ComboBox();
+            DateLabel = new Label();
+            NameErrorProvider = new ErrorProvider(components);
+            WidthErrorProvider = new ErrorProvider(components);
+            DepthErrorProvider = new ErrorProvider(components);
+            DrawerErrorProvider = new ErrorProvider(components);
+            ShippingErrorProvider = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)NameErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)WidthErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DepthErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DrawerErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ShippingErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // MainMenuBtn
             // 
-            MainMenuBtn.Location = new Point(22, 377);
+            MainMenuBtn.Location = new Point(10, 361);
             MainMenuBtn.Name = "MainMenuBtn";
             MainMenuBtn.Size = new Size(198, 52);
             MainMenuBtn.TabIndex = 0;
@@ -60,9 +80,9 @@
             lblDate.AutoSize = true;
             lblDate.Location = new Point(20, 12);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(117, 25);
+            lblDate.Size = new Size(113, 25);
             lblDate.TabIndex = 1;
-            lblDate.Text = "Today's Date:";
+            lblDate.Text = "Today's Date";
             // 
             // lblCustomerName
             // 
@@ -93,98 +113,166 @@
             // 
             // lblDeskDrawer
             // 
-            lblDeskDrawer.AutoSize = true;
-            lblDeskDrawer.Location = new Point(20, 219);
+            lblDeskDrawer.Location = new Point(0, 0);
             lblDeskDrawer.Name = "lblDeskDrawer";
-            lblDeskDrawer.Size = new Size(186, 25);
-            lblDeskDrawer.TabIndex = 5;
-            lblDeskDrawer.Text = "Desk Drawer Amount:";
+            lblDeskDrawer.Size = new Size(100, 23);
+            lblDeskDrawer.TabIndex = 0;
             // 
             // lblMaterialType
             // 
-            lblMaterialType.AutoSize = true;
-            lblMaterialType.Location = new Point(22, 263);
+            lblMaterialType.Location = new Point(0, 0);
             lblMaterialType.Name = "lblMaterialType";
-            lblMaterialType.Size = new Size(121, 25);
-            lblMaterialType.TabIndex = 6;
-            lblMaterialType.Text = "Material Type:";
-            lblMaterialType.Click += lblMaterialType_Click;
+            lblMaterialType.Size = new Size(100, 23);
+            lblMaterialType.TabIndex = 0;
             // 
-            // lblTimeframe
+            // NameBox
             // 
-            lblTimeframe.AutoSize = true;
-            lblTimeframe.Location = new Point(32, 313);
-            lblTimeframe.Name = "lblTimeframe";
-            lblTimeframe.Size = new Size(176, 25);
-            lblTimeframe.TabIndex = 7;
-            lblTimeframe.Text = "Shipping Timeframe:";
+            NameBox.Location = new Point(229, 55);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(198, 31);
+            NameBox.TabIndex = 9;
+            NameBox.Validating += NameBox_Validating;
             // 
-            // dateTimePicker1
+            // WidthBox
             // 
-            dateTimePicker1.Location = new Point(384, 6);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 8;
+            WidthBox.Location = new Point(229, 99);
+            WidthBox.Name = "WidthBox";
+            WidthBox.Size = new Size(198, 31);
+            WidthBox.TabIndex = 10;
+            WidthBox.Validating += WidthBox_Validating;
             // 
-            // textBox1
+            // DepthBox
             // 
-            textBox1.Location = new Point(285, 55);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(419, 31);
-            textBox1.TabIndex = 9;
+            DepthBox.Location = new Point(229, 154);
+            DepthBox.Name = "DepthBox";
+            DepthBox.Size = new Size(198, 31);
+            DepthBox.TabIndex = 11;
+            DepthBox.Validating += DepthBox_Validating;
             // 
-            // textBox2
+            // lblDrawerAmount
             // 
-            textBox2.Location = new Point(285, 99);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(419, 31);
-            textBox2.TabIndex = 10;
+            lblDrawerAmount.AutoSize = true;
+            lblDrawerAmount.Location = new Point(22, 219);
+            lblDrawerAmount.Name = "lblDrawerAmount";
+            lblDrawerAmount.Size = new Size(186, 25);
+            lblDrawerAmount.TabIndex = 17;
+            lblDrawerAmount.Text = "Desk Drawer Amount:";
             // 
-            // textBox3
+            // lblMaterial
             // 
-            textBox3.Location = new Point(285, 154);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(419, 31);
-            textBox3.TabIndex = 11;
+            lblMaterial.AutoSize = true;
+            lblMaterial.Location = new Point(22, 266);
+            lblMaterial.Name = "lblMaterial";
+            lblMaterial.Size = new Size(121, 25);
+            lblMaterial.TabIndex = 18;
+            lblMaterial.Text = "Material Type:";
             // 
-            // numericUpDown1
+            // lblShippingTimeframe
             // 
-            numericUpDown1.Location = new Point(285, 307);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(419, 31);
-            numericUpDown1.TabIndex = 12;
+            lblShippingTimeframe.AutoSize = true;
+            lblShippingTimeframe.Location = new Point(22, 319);
+            lblShippingTimeframe.Name = "lblShippingTimeframe";
+            lblShippingTimeframe.Size = new Size(176, 25);
+            lblShippingTimeframe.TabIndex = 19;
+            lblShippingTimeframe.Text = "Shipping Timeframe:";
             // 
-            // menuStrip1
+            // button2
             // 
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 13;
-            menuStrip1.Text = "menuStrip1";
+            button2.Location = new Point(229, 361);
+            button2.Name = "button2";
+            button2.Size = new Size(198, 52);
+            button2.TabIndex = 20;
+            button2.Text = "Submit Order";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += SubmitOrderBtn_Click;
+            // 
+            // DrawerInput
+            // 
+            DrawerInput.FormattingEnabled = true;
+            DrawerInput.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7" });
+            DrawerInput.Location = new Point(229, 216);
+            DrawerInput.Name = "DrawerInput";
+            DrawerInput.Size = new Size(198, 33);
+            DrawerInput.TabIndex = 21;
+            DrawerInput.Validating += DrawerInput_Validating;
+            // 
+            // MaterialComboBox
+            // 
+            MaterialComboBox.FormattingEnabled = true;
+            MaterialComboBox.Items.AddRange(new object[] { "Pine", "Laminate", "Veneer", "Oak", "Rosewood" });
+            MaterialComboBox.Location = new Point(229, 263);
+            MaterialComboBox.Name = "MaterialComboBox";
+            MaterialComboBox.Size = new Size(198, 33);
+            MaterialComboBox.TabIndex = 22;
+            MaterialComboBox.Validating += MaterialComboBox_Validating;
+            // 
+            // ShippingComboBox
+            // 
+            ShippingComboBox.FormattingEnabled = true;
+            ShippingComboBox.Items.AddRange(new object[] { "3", "5", "7" });
+            ShippingComboBox.Location = new Point(229, 311);
+            ShippingComboBox.Name = "ShippingComboBox";
+            ShippingComboBox.Size = new Size(198, 33);
+            ShippingComboBox.TabIndex = 23;
+            ShippingComboBox.Validating += ShippingComboBox_Validating;
+            // 
+            // DateLabel
+            // 
+            DateLabel.AutoSize = true;
+            DateLabel.Location = new Point(314, 12);
+            DateLabel.Name = "DateLabel";
+            DateLabel.Size = new Size(113, 25);
+            DateLabel.TabIndex = 24;
+            DateLabel.Text = "Today's Date";
+            // 
+            // NameErrorProvider
+            // 
+            NameErrorProvider.ContainerControl = this;
+            // 
+            // WidthErrorProvider
+            // 
+            WidthErrorProvider.ContainerControl = this;
+            // 
+            // DepthErrorProvider
+            // 
+            DepthErrorProvider.ContainerControl = this;
+            // 
+            // DrawerErrorProvider
+            // 
+            DrawerErrorProvider.ContainerControl = this;
+            // 
+            // ShippingErrorProvider
+            // 
+            ShippingErrorProvider.ContainerControl = this;
             // 
             // AddQuote
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(numericUpDown1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(lblTimeframe);
-            Controls.Add(lblMaterialType);
-            Controls.Add(lblDeskDrawer);
+            ClientSize = new Size(439, 425);
+            Controls.Add(DateLabel);
+            Controls.Add(ShippingComboBox);
+            Controls.Add(MaterialComboBox);
+            Controls.Add(DrawerInput);
+            Controls.Add(button2);
+            Controls.Add(lblShippingTimeframe);
+            Controls.Add(lblMaterial);
+            Controls.Add(lblDrawerAmount);
+            Controls.Add(DepthBox);
+            Controls.Add(WidthBox);
+            Controls.Add(NameBox);
             Controls.Add(lblDepth);
             Controls.Add(lblWidth);
             Controls.Add(lblCustomerName);
             Controls.Add(lblDate);
             Controls.Add(MainMenuBtn);
-            Controls.Add(menuStrip1);
             Name = "AddQuote";
-            Text = "AddQuote";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            Text = "Add Quote";
+            ((System.ComponentModel.ISupportInitialize)NameErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)WidthErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DepthErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DrawerErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ShippingErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,12 +286,21 @@
         private Label lblDepth;
         private Label lblDeskDrawer;
         private Label lblMaterialType;
-        private Label lblTimeframe;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private NumericUpDown numericUpDown1;
-        private MenuStrip menuStrip1;
+        private TextBox NameBox;
+        private TextBox WidthBox;
+        private TextBox DepthBox;
+        private Label lblDrawerAmount;
+        private Label lblMaterial;
+        private Label lblShippingTimeframe;
+        private Button button2;
+        private ComboBox DrawerInput;
+        private ComboBox MaterialComboBox;
+        private ComboBox ShippingComboBox;
+        private Label DateLabel;
+        private ErrorProvider NameErrorProvider;
+        private ErrorProvider WidthErrorProvider;
+        private ErrorProvider DepthErrorProvider;
+        private ErrorProvider DrawerErrorProvider;
+        private ErrorProvider ShippingErrorProvider;
     }
 }

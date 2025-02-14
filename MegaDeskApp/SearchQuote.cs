@@ -16,5 +16,17 @@ namespace MegaDeskApp
         {
             InitializeComponent();
         }
+
+        private void return_to_main()
+        {
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            Close();
+        }
+
+        private void GoBack(object sender, EventArgs e)
+        {
+            return_to_main();
+        }
     }
 }
