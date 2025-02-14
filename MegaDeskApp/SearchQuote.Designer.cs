@@ -1,4 +1,5 @@
-﻿namespace MegaDeskApp
+﻿
+namespace MegaDeskApp
 {
     partial class SearchQuote
     {
@@ -28,12 +29,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SearchQuote";
+            GoBackBtn = new Button();
+            SuspendLayout();
+            // 
+            // GoBackBtn
+            // 
+            GoBackBtn.Location = new Point(22, 373);
+            GoBackBtn.Name = "GoBackBtn";
+            GoBackBtn.Size = new Size(198, 52);
+            GoBackBtn.TabIndex = 1;
+            GoBackBtn.Text = "Go Back";
+            GoBackBtn.UseVisualStyleBackColor = true;
+            GoBackBtn.Click += GoBackBtn_Click;
+            // 
+            // SearchQuote
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(GoBackBtn);
+            Name = "SearchQuote";
+            Text = "SearchQuotes";
+            ResumeLayout(false);
+        }
+
+        private void GoBackBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
+
+        private Button GoBackBtn;
     }
 }
